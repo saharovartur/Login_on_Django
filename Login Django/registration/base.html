@@ -1,0 +1,15 @@
+
+        {% if user.is_authenticated %}
+            <p>Добро пожаловать, {{ user.username }}!</p>
+            <p><a href="{% url 'logout' %}">Выйти</a> </p>
+        {% else %}
+            <p>Вы не авторизованы.</p>
+            <a href="{% url 'login' %}">Войти</a>
+        {% endif %}
+     <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
